@@ -51,6 +51,8 @@ Java treats it as a "remainder," whereas Python treats it as a modulus.
 These operations coincide for&nbsp;${m \ge 0}$ and&nbsp;${n > 0}$, but differ for negative inputs.
 <!-- TODO explain difference -->
 
+The [Wikipedia page for the modulo operation](https://en.wikipedia.org/wiki/Modulo) has a nice table detailing how different programming languages implement `%` and provide the operation.
+
 ## Asymptotic Complexity
 ## Bit Twiddling
 ## Binary Search
