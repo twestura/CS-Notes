@@ -7,6 +7,9 @@ The code examples in the repository are licensed under the [MIT License](https:/
 Coding examples focus on Python and Java, but we may reference Rust, Javascript/Typescript, OCaml, and Haskell from time to time.
 
 ## Introduction
+
+## Installation, IDEs, and Programming Environment Setup
+
 ## Basic Mathematics
 
 ### Division, Remainder, and Modulus
