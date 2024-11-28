@@ -38,11 +38,13 @@ def divide(m: int, n: int) -> tuple[int, int]:
     """
     assert m >= 0 and n > 0
     count = 0
+    # m - n >= 0 and m + count * n equals the original value of m
     while m >= n:
         count += 1
         m -= n
     return count, m
 ```
+<!-- TODO discussion of code and loop invariant -->
 
 Different programming languages handle the remainder or modulus operator `%` in various ways.
 Java treats it as a "remainder," whereas Python treats it as a modulus.
