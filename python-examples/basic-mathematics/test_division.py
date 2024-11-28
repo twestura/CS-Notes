@@ -17,6 +17,11 @@ def test_divide_by_1() -> None:
         assert divide(dividend, 1) == (dividend, 0)
 
 
+def test_17_divided_by_5() -> None:
+    """Tests the 17 // 5 example from the notes."""
+    assert divide(17, 5) == (3, 2)
+
+
 def test_random_tests() -> None:
     """Tests random inputs to ensure consistency with Python's built-in operations."""
     random.seed(0)
