@@ -14,16 +14,20 @@ Coding examples focus on Python and Java, but we may reference Rust, Javascript/
 
 ### Division, Remainder, and Modulus
 
-In elementary school we learn an algorithm for long division, but the complexity of that algorithm may obscure that there is a "simplier" (albeit perhaps more tedius to carry out by hand) algorithm for determining the quotient and remainder: repeately subtract the divisor from the dividend, getting as close to&nbsp;$0$ as possible.
-The count of the number of substractions is called the quotient, and the remaining number left over when we cannot perform another subtraction without going beyond&nbsp;$0$ is called the remainder.
+In elementary school we learn an algorithm for long division, but the complexity of that algorithm may obscure that there is a "simplier" (albeit perhaps more tedius to carry out by hand) algorithm for determining the quotient and remainder: repeately subtract the divisor from the dividend, getting as close to $0$ as possible.
+The count of the number of substractions is called the quotient, and the remaining number left over when we cannot perform another subtraction without going beyond $0$ is called the remainder.
 The word "quotient" is derived from the Latin words *quot* meaning "how many" and *quotiens* meaning "how often" or "how many times."
 
 That is, the division `m / n` of positive integers `m` and `n` is the count of the number of times `n` can be subtracted from `m`.
-For example, consider&nbsp;${17 / 5}$:
+For example, consider ${17 / 5}$:
+
 $$17 \underbrace{- 5 - 5 - 5}_{3\text{ times}} = 2$$
-Here we would reach a negative number were we to subtract another&nbsp;$5$, so we have a remainder of&nbsp;$2$.
+
+Here we would reach a negative number were we to subtract another $5$, so we have a remainder of $2$.
 We now write
+
 $$3 \cdot 5 + 2 = 17.$$
+
 The result of the integer division is two integers `q` and `r`, with `0 <= r < n`, such that `q * n + r = m`.
 That is,
 $$\text{quotient} \cdot \text{divisor} + \text{remainder} = \text{dividend}.$$
@@ -63,7 +67,7 @@ The precondition states that `n > 0`, and every iteration subtracts `n` from `m`
 
 Different programming languages handle division and the remainder or modulus operator `%` in various ways for negative numbers.
 Java treats `%` as a "remainder," whereas Python treats it as a modulus.
-These operations coincide for&nbsp;${m \ge 0}$ and&nbsp;${n > 0}$, but differ for negative inputs.
+These operations coincide for ${m \ge 0}$ and ${n > 0}$, but differ for negative inputs.
 
 In Java, the result of `/` is to take the division of the absolute values `abs(m) / abs(n)` and return the quotient with a sign depending on whether the number of negative numbers in the division is even or odd.
 The remainder `%` is calculated by taking `abs(m) % abs(n)` and returning the result with the sign of `m`.
@@ -74,7 +78,7 @@ Python also provides the `divmod` function for calculating the quotient and rema
 Other languages will likely have a compiler that handles this optimization step.
 
 In my experience, Python's `%` is more useful for negative numbers than is Java's, as rare as those occurrences are.
-The most typical examples are wrapping around indices of a list/array, or using floating-point numbers and doing some trigonometry modulo&nbsp;$2\pi$.
+The most typical examples are wrapping around indices of a list/array, or using floating-point numbers and doing some trigonometry modulo $2\pi$.
 In Java, use [`Math.floorMod`](https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/Math.html#floorMod(int,int)) to get the Python behavior.
 
 The [Wikipedia page for the modulo operation](https://en.wikipedia.org/wiki/Modulo) has a nice table detailing how different programming languages implement `%` and provide the operation.
