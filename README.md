@@ -57,7 +57,10 @@ Let `m0` denote the initial value of `m`.
 The function precondition is that `m0 >= 0`, and the variable `count` is initialized to `0`, satisfying `m0 == m + 0 * n`.
 2. Maintenance.
 Since `m >= n`, subtracting `n` from `m` still results in `m >= 0` at the end of the iteration.
-Subtracting `n` from `m` but adding `1` to count results in `m0 == m + count * n == (m - n) + (count + 1) * n`.
+Subtracting `n` from `m` but adding `1` to count results in the following:
+```text
+m0 == m + count * n == m + (-n + n) + count * n == (m - n) + (count + 1) * n.
+```
 3. Postcondition.
 The loop guard ends when `m < n`, and we have `0 <= m < n`.
 At the same time, `m0 == m + count * n`.
