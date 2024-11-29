@@ -65,9 +65,13 @@ Different programming languages handle division and the remainder or modulus ope
 Java treats `%` as a "remainder," whereas Python treats it as a modulus.
 These operations coincide for&nbsp;${m \ge 0}$ and&nbsp;${n > 0}$, but differ for negative inputs.
 
-In Java, the result is simply to take the division of the absolute values `abs(m) / abs(n)` and return the quotient with a sign depending on whether the number of negative numbers in the division is even or odd.
+In Java, the result of `/` is to take the division of the absolute values `abs(m) / abs(n)` and return the quotient with a sign depending on whether the number of negative numbers in the division is even or odd.
+The remainder `%` is calculated by taking `abs(m) % abs(n)` and returning the result with the sign of `m`.
 
-<!-- TODO explain difference -->
+<!-- TODO explain Python division and remainder -->
+
+Python also provides the `divmod` function for calculating the quotient and remainder at the same time.
+Other languages will likely have a compiler that handles this optimization step.
 
 In my experience, Python's `%` is more useful for negative numbers than is Java's, as rare as those occurrences are.
 The most typical examples are wrapping around indices of a list/array, or using floating-point numbers and doing some trigonometry modulo&nbsp;$2\pi$.

@@ -26,15 +26,12 @@ def divide_java(m: int, n: int) -> tuple[int, int]:
     Requires `n != 0`.
     """
     assert n
-    sign = 1
+    q, r = divide(abs(m), abs(n))
+    if (m < 0) ^ (n < 0):
+        q = -q
     if m < 0:
-        m = -m
-        sign = -sign
-    if n < 0:
-        n = -n
-        sign = -sign
-    q, r = divide(m, n)
-    return sign * q, r
+        r = -r
+    return q, r
 
 
 def divide_python(m: int, n: int) -> tuple[int, int]:
