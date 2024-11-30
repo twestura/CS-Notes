@@ -70,7 +70,7 @@ def test_python_negative_mod() -> None:
 
 def test_python_division() -> None:
     """Tests the Python division algorithm on random inputs."""
-    random.seed()
+    random.seed(0)
     for _ in range(10_000):
         dividend = random.randrange(-10_000_000, 10_000_000)
         divisor = random.randrange(-999_999, 10_000_000)
