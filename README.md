@@ -106,9 +106,6 @@ For example, `5 / 2 == 2.5`.
 As an integer divison, this quantity is rounded down to `5 // 2 == 2`.
 Now, if instead we have a negative number and take `-5 / 2 == -2.5`, the result as an integer division still is rounded down to yield `-5 // 2 == -3`.
 After determining the quotient, the remainder is set so that `r == m - q * n` is fulfilled.
-<!-- TODO explain why the sign of the remainder is the sign of the divisor -->
-<!-- TODO explain how this works... -->
-For `n < 0`, we have `m % n == -(-m % -n)`.
 
 ```python
 def divide_python(m: int, n: int) -> tuple[int, int]:
