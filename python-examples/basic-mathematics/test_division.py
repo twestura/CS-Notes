@@ -2,7 +2,7 @@
 
 import random
 
-from division import divide, divide_java
+from division import divide, divide_java, divide_python
 
 
 def test_0_dividend() -> None:
@@ -35,10 +35,28 @@ def test_java_division() -> None:
     """Tests the Java division sign adjustments."""
     m = 25
     n = 10
-    assert divide_java(m, n) == (2, 5)
-    assert divide_java(-m, n) == (-2, -5)
-    assert divide_java(m, -n) == (-2, 5)
-    assert divide_java(-m, -n) == (2, -5)
+    # The assertions check:
+    # divident == divisor * quotient + remainder.
+
+    # Both positive.
+    q, r = divide_java(m, n)
+    assert (q, r) == (2, 5)
+    assert m == n * q + r
+
+    # Negative dividend.
+    q, r = divide_java(-m, n)
+    assert (q, r) == (-2, -5)
+    assert -m == n * q + r
+
+    # Negative divisor.
+    q, r = divide_java(m, -n)
+    assert (q, r) == (-2, 5)
+    assert m == -n * q + r
+
+    # Both negative.
+    q, r = divide_java(-m, -n)
+    assert (q, r) == (2, -5)
+    assert -m == -n * q + r
 
 
 def test_python_negative_mod() -> None:
@@ -48,3 +66,14 @@ def test_python_negative_mod() -> None:
         dividend = random.randrange(-10_000_000, 10_000_000)
         divisor = random.randrange(-10_000_000, 0)
         assert -(-dividend % -divisor) == dividend % divisor
+
+
+def test_python_division() -> None:
+    """Tests the Python division algorithm on random inputs."""
+    random.seed()
+    for _ in range(10_000):
+        dividend = random.randrange(-10_000_000, 10_000_000)
+        divisor = random.randrange(-999_999, 10_000_000)
+        if divisor == 0:
+            divisor = -10_000_000
+        assert divide_python(dividend, divisor) == divmod(dividend, divisor)

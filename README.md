@@ -62,7 +62,7 @@ Subtracting `n` from `m` but adding `1` to count results in the following:
 (m - n) * (1 + count) * n == m + (-n + n) + count * n == m + count * n == m0.
 ```
 3. Postcondition.
-The loop guard ends when `m < n`, and we have `0 <= m < n`.
+The loop guard ends when `m < n`, and we have `0 <= m < n` since `m >= n` at the start of the previous iteration.
 At the same time, `m0 == m + count * n`.
 Hence `m` is the remainder, and `count` is the quotient.
 4. Progress.
@@ -72,8 +72,9 @@ Different programming languages handle division and the remainder or modulus ope
 Java treats `%` as a "remainder," whereas Python treats it as a modulus.
 These operations coincide for ${m \ge 0}$ and ${n > 0}$, but differ for negative inputs.
 
-In Java, the result of `/` is to take the division of the absolute values `abs(m) / abs(n)` and return the quotient with a sign depending on whether the number of negative numbers in the division is even or odd.
+In [Java](https://docs.oracle.com/javase/specs/jls/se23/html/jls-15.html#jls-15.17.2), the result of `/` is to take the division of the absolute values `abs(m) / abs(n)` and return the quotient with a sign depending on whether the number of negative numbers in the division is even or odd.
 The remainder `%` is calculated by taking `abs(m) % abs(n)` and returning the result with the sign of `m`.
+This method preserves the relationship that `n * q + r == m`, but the requirement on the remainder becomes `0 <= abs(r) < abs(n)`.
 
 As a code example, we can use our other divison algorithm and account for the signs of the returned values.
 
@@ -99,17 +100,32 @@ def divide_java(m: int, n: int) -> tuple[int, int]:
     return q, r
 ```
 
-<!-- TODO explain Python division and remainder -->
 For Python, instead of rounding towards $0$, the division is floored.
 That is, the result is always rounded down, which for negative numbers makes them even more negative.
 For example, `5 / 2 == 2.5`.
 As an integer divison, this quantity is rounded down to `5 // 2 == 2`.
 Now, if instead we have a negative number and take `-5 / 2 == -2.5`, the result as an integer division still is rounded down to yield `-5 // 2 == -3`.
-
+After determining the quotient, the remainder is set so that `r == m - q * n` is fulfilled.
+<!-- TODO explain why the sign of the remainder is the sign of the divisor -->
 <!-- TODO explain how this works... -->
 For `n < 0`, we have `m % n == -(-m % -n)`.
 
-<!-- TODO code example for Python -->
+```python
+def divide_python(m: int, n: int) -> tuple[int, int]:
+    """
+    Returns `m // n, m % n` as implemented in Python.
+
+    Requires `n != 0`.
+    """
+    assert n
+    q, r = divide(abs(m), abs(n))
+    # If the signs are different, make the quotient negative and subtract 1 to account
+    # for taking the floor when the remainder is nonzero.
+    if (m < 0) ^ (n < 0):
+        q = -q - (r != 0)
+    # The returned remainder satisfies r == m - n * q.
+    return q, m - n * q
+```
 
 Python also provides the `divmod` function for calculating the quotient and remainder at the same time.
 Other languages will likely have a compiler that handles this optimization step.

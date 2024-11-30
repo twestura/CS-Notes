@@ -40,10 +40,22 @@ def divide_java(m: int, n: int) -> tuple[int, int]:
 
 def divide_python(m: int, n: int) -> tuple[int, int]:
     """
-    Returns `m // n, m % n` as implements in Python
+    Returns `m // n, m % n` as implemented in Python.
 
-    TODO
-
-    Requires n != 0.
+    Requires `n != 0`.
     """
-    return 0, 0
+    assert n
+    q, r = divide(abs(m), abs(n))
+    # If the signs are different, make the quotient negative and subtract 1 to account
+    # for taking the floor when the remainder is nonzero.
+    if (m < 0) ^ (n < 0):
+        q = -q - (r != 0)
+    # The returned remainder satisfies r == m - n * q.
+    return q, m - n * q
+
+
+def print_line() -> None:
+    """Prints to `stdout` an example of division and remainder."""
+    print(" ".join(f"{n: >3}" for n in range(-12, 12)))
+    print(" ".join(f"{n % 7: >3}" for n in range(-12, 12)))
+    print(" ".join(f"{n % -7: >3}" for n in range(-12, 12)))
