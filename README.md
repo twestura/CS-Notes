@@ -28,12 +28,14 @@ We now write
 
 $$3 \cdot 5 + 2 = 17.$$
 
-The result of the integer division is two integers `q` and `r`, with `0 <= r < n`, such that `q * n + r = m`.
+The result of the integer division is two integers `q` and `r`, with `0 <= r < n`, such that `q * n + r == m`.
 That is,
+
 $$\text{quotient} \cdot \text{divisor} + \text{remainder} = \text{dividend}.$$
 
 Division could be implemented by the following Python code.
 Note this code aims to be obvious, not efficient.
+
 ```python
 def divide(m: int, n: int) -> tuple[int, int]:
     """
