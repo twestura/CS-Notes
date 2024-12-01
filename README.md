@@ -136,6 +136,54 @@ In Java, use [`Math.floorMod`](https://docs.oracle.com/en/java/javase/23/docs/ap
 The [Wikipedia page for the modulo operation](https://en.wikipedia.org/wiki/Modulo) has a nice table detailing how different programming languages implement `%` and provide the operation.
 See also [this post](https://python-history.blogspot.com/2010/08/why-pythons-integer-division-floors.html) about the design of Python's divison.
 
+### Logarithms
+
+Logarithms were introduced in the early 1600's independently by two mathematicians: the Scottsman John Napier and the Swiss Jost Bürgi.
+And oh boy, John Napier apparently was quite the character.
+He was accused of being a magician and necromancer, with a black rooster as his summoning familiar.
+
+Anyway, Napier was the one who created the word logarithm, smashing together the Greek words *logos*, roughly meaning ratio, or calculation, and *arithmos* meaning number.
+The logarithm is essentially the "calculation-number" that originally was used to enable mathematicians, astronomers, and other interested folk to speed up the process of performing multiplications and other calculations.
+
+Adding numbers by hand is a process that is linear in the number of digits: just pair them up, add the pairs from right to left, potentially carrying a 1 when necessary.
+But multiplication is quadratic in the number of digits: each digit in the "top" number is multiplied by each digit in the "bottom" number, and then all of these products are summed together.
+Rather than needing to perform these calculations every time, logarithm tables were written that enabled the user to look up the numbers they wanted to multiply, map the numbers to their logarithms, add the logarithms, and then look up the exponentiation of the sum to get the answer.
+
+$$xy = \log_b{xy} = \log_b{x} + \log_b{y} = b^{\log_b{x} + \log_b{y}}.$$
+
+The process of a multiplication was replaced by three table lookups and one addition.
+
+For real numbers ${x, b > 0}$ with ${b \ne 1}$, the real number $y$ such that ${x = b^y}$ is called the base $b$ logarithm of $x$, and we write ${\log_b{x} = y}$.
+When $y$ is an integer, the logarithm is the number of times $b$ is multiplied by itself to equal $x$.
+
+For example:
+
+$$\underbrace{2 \cdot 2 \cdot 2 \cdot 2}_{4 \text{ times}} = 16; \qquad \log_2{16} = 4.$$
+
+But this equation can be interprete another way.
+We can view the logarithm as giving the number of times we can divide $16$ by $2$ to get all the way down to $1$.
+
+$$
+    \begin{align*}
+        16 / 2 &= 8,\\
+        8 / 2 &= 4,\\
+        4 / 2 &= 2,\\
+        2 / 2 &= 1.
+    \end{align*}
+$$
+
+This interpretation is analogous to our description of division as the number of subtractions performed in order to reach $0$.
+And the count of the number of divisions to reach $1$ is how we commonly use algorithms in analyzing the running time of divide and conquer algorithms: we divide the problem into subproblems, and the logarithm gives the "height" of the stack of subproblems.
+
+There are two important properties of logarithms:
+
+- They exchange multiplication and addition.
+- They act as an inverse to exponentiation.
+
+The other properties of logarithms are derived from these properties.
+
+<!-- TODO more properties -->
+
 ## Asymptotic Complexity
 ## Bit Twiddling
 ## Binary Search
