@@ -158,7 +158,7 @@ When $y$ is an integer, the logarithm is the number of times $b$ is multiplied b
 
 For example:
 
-$$\underbrace{2 \cdot 2 \cdot 2 \cdot 2}_{4 \text{ times}} = 16; \qquad \log_2{16} = 4.$$
+$$2^4 = \underbrace{2 \cdot 2 \cdot 2 \cdot 2}_{4 \text{ times}} = 16; \qquad \log_2{16} = 4.$$
 
 But this equation can be interprete another way.
 We can view the logarithm as giving the number of times we can divide $16$ by $2$ to get all the way down to $1$.
@@ -177,10 +177,38 @@ And the count of the number of divisions to reach $1$ is how we commonly use alg
 
 There are two important properties of logarithms:
 
-- They exchange multiplication and addition.
 - They act as an inverse to exponentiation.
+- They exchange multiplication and addition.
 
 The other properties of logarithms are derived from these properties.
+
+The two inverse properties follow directy from the definition:
+
+- $\log_b{b^x} = x$. The exponent to which $b$ is raised to obtain $b^x$ is $x$.
+- $b^{\log_b{x}} = x$. By definition $\log_b{x}$ is the exponent to which $b$ is raised to obtain $x$. Raising $b$ to that exponent indeed yields $x$.
+
+When performing calculations by hand, it is common to "cross out" the base and logarithm when either exponentiation or taking the logarithm of both sides of an equation.
+Be careful, though, that we understand the inverse property we're applying, and not just mechanically crossing out notation without thinking about why it's possible to do so.
+
+From here we can plug in the values ${x = 0}$ and ${x = 1}$ to obtain two corollaries:
+
+- $\log_b{1} = \log_b{b^0} = 0,$
+- $\log_b{b} = \log_b{b^1} = 1.$
+
+Next is the product rule.
+For $b$, $x$, and $y$ positive real numbers with ${b \ne 1}$:
+
+$$\log_b{xy} = \log_b{x} + \log_b{y}.$$
+
+To prove this rule, we use the inverse laws and the property of exponentiation that ${b^x b^y = b^{x + y}}$.
+We perform the following calculation to obtain the rule:
+
+$$xy = b^{\log_b{x}} b^{\log_b{y}} = b^{\log_b{x} \,+\, \log_b{y}}.$$
+
+For integer exponents, this rule is saying "the number of times we multiply $b$ to get $xy$ the sum of the numbers of times to get $x$ and $y$ individually."
+Writing this out, we can see how the associativity of multiplication plays a role:
+
+$$xy = \overbrace{\underbrace{\left(b\cdots{}b\right)}_{\log_b{x}\text{ times}}\,\underbrace{\left(b\cdots{}b\right)}_{\log_b{y}\text{ times}}}^{\log_b{x} \,+\, \log_b{y}\text{ times}}$$
 
 <!-- TODO more properties -->
 
