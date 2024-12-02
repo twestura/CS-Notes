@@ -205,12 +205,21 @@ We perform the following calculation to obtain the rule:
 
 $$xy = b^{\log_b{x}} b^{\log_b{y}} = b^{\log_b{x} \,+\, \log_b{y}}.$$
 
-For integer exponents, this rule is saying "the number of times we multiply $b$ to get $xy$ the sum of the numbers of times to get $x$ and $y$ individually."
+For integer exponents, this rule is stating "the number of times we multiply $b$ to get $xy$ is the sum of the numbers of times to get $x$ and $y$ individually."
 Writing this out, we can see how the associativity of multiplication plays a role:
 
 $$xy = \overbrace{\underbrace{\left(b\cdots{}b\right)}_{\log_b{x}\text{ times}}\,\underbrace{\left(b\cdots{}b\right)}_{\log_b{y}\text{ times}}}^{\log_b{x} \,+\, \log_b{y}\text{ times}}$$
 
 <!-- TODO more properties -->
+
+| Log properties | Corollaries |
+| -------------- | ----------- |
+| $$b^{\log_b{x}} = x$$ | $$\log_b{1} = 0$$ |
+| $$\log_b{b^x} = x$$ | $$\log_b{b} = 1$$ |
+| $$\log_b{xy} = \log_b{x} + \log_b{y}$$ | $$\log_b{\frac{x}{y}} = \log_b{x} - \log_b{y}$$ |
+| $$\log_b{x^y} = y\log_b{x}$$ | $$\log_b{\sqrt[n]{x}} = \frac{1}{n}\log_b{x}$$ |
+| $$\log_{b^y}{x} = \frac{1}{y}\log_b{x}$$ | $$\log_{\frac{1}{b}}{x} = -\log_b{x}$$ |
+| $$\log_b{x} = \frac{\log_a{x}}{\log_a{b}}$$ | $$\log_b{a} = \frac{1}{\log_a{b}}$$ |
 
 ## Asymptotic Complexity
 ## Bit Twiddling
