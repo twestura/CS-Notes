@@ -203,12 +203,12 @@ $$\log_b{xy} = \log_b{x} + \log_b{y}.$$
 To prove this rule, we use the inverse laws and the property of exponentiation that ${b^x b^y = b^{x + y}}$.
 We perform the following calculation to obtain the rule:
 
-$$xy = b^{\log_b{x}} b^{\log_b{y}} = b^{\log_b{x} \,+\, \log_b{y}}.$$
+$$xy = b^{\log_b{x}} b^{\log_b{y}} = b^{\log_b{x} + \log_b{y}}.$$
 
 For integer exponents, this rule is stating "the number of times we multiply $b$ to get $xy$ is the sum of the numbers of times to get $x$ and $y$ individually."
 Writing this out, we can see how the associativity of multiplication plays a role:
 
-$$xy = \overbrace{\underbrace{\left(b\cdots{}b\right)}_{\log_b{x}\text{ times}}\,\underbrace{\left(b\cdots{}b\right)}_{\log_b{y}\text{ times}}}^{\log_b{x} \,+\, \log_b{y}\text{ times}}$$
+$$xy = \overbrace{\underbrace{\left(b\cdots{}b\right)}_{\log_b{x}\text{ times}}\underbrace{\left(b\cdots{}b\right)}_{\log_b{y}\text{ times }}}^{\log_b{x} + \log_b{y}\text{ times}}$$
 
 <!-- TODO more properties -->
 
