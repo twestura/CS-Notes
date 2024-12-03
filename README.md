@@ -208,7 +208,9 @@ $$xy = b^{\log_b{x}} b^{\log_b{y}} = b^{\log_b{x} + \log_b{y}}.$$
 For integer exponents, this rule is stating "the number of times we multiply $b$ to get $xy$ is the sum of the numbers of times to get $x$ and $y$ individually."
 Writing this out, we can see how the associativity of multiplication plays a role:
 
-$$xy = \overbrace{\underbrace{\left(b\cdots{}b\right)}_{\log_b{x}\text{ times}}\underbrace{\left(b\cdots{}b\right)}_{\log_b{y}\text{ times }}}^{\log_b{x} + \log_b{y}\text{ times}}$$
+<!-- $$xy = \overbrace{\underbrace{\left(b\cdots{}b\right)}_{\log_b{x}\text{ times}}\underbrace{\left(b\cdots{}b\right)}_{\log_b{y}\text{ times }}}^{\log_b{x} + \log_b{y}\text{ times}}$$ -->
+
+$$xy = \underbrace{\left(b\cdots{}b\right)}_{\log_b{x}\text{ times}}\underbrace{\left(b\cdots{}b\right)}_{\log_b{y}\text{ times }}$$
 
 Next is the "power rule," which states we can remove an exponent from inside of a log and place it as a coefficient outside of the log.
 Let $b$, $x$, and $y$ be real numbers, ${b, x > 0}$, and ${b \ne 1}$.
