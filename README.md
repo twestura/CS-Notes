@@ -209,7 +209,7 @@ For integer exponents, this rule is stating "the number of times we multiply $b$
 Writing this out, we can see how the associativity of multiplication plays a role:
 
 <!-- Note GitHub cannot seem to format multiple underbraces on the same line. -->
-$$xy = \overbrace{\underbrace{\left(b\cdots{}b\right)}_{\log_b{x}\text{ times}}\underbrace{\left(b\cdots{}b\right)}_{\log_b{y}\text{ times }}}^{\log_b{x} + \log_b{y}\text{ times}}$$
+$$xy = \overbrace{\underbrace{\left(b\cdots{}b\right)}_{\log_b{x}\text{ times }}\underbrace{\left(b\cdots{}b\right)}_{\log_b{y}\text{ times }}}^{\log_b{x} + \log_b{y}\text{ times}}$$
 
 Next is the "power rule," which states we can remove an exponent from inside of a log and place it as a coefficient outside of the log.
 Let $b$, $x$, and $y$ be real numbers, ${b, x > 0}$, and ${b \ne 1}$.
