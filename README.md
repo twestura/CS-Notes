@@ -286,6 +286,12 @@ The following table summarizes the important properties of logarithms.
 | $$\log_{b^y}{x} = \frac{1}{y}\log_b{x}$$ | $$\log_{\frac{1}{b}}{x} = -\log_b{x}$$ |
 | $$\log_b{x} = \frac{\log_a{x}}{\log_a{b}}$$ | $$\log_b{a} = \frac{1}{\log_a{b}}$$ |
 
+See the logarithmic functions in [Python's math module](https://docs.python.org/3/library/math.html#math.log) and in [Java's Math class](https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/Math.html#log(double)).
+
+### Trigonometry
+
+<!-- TODO don't need lots of trig identities, just the basic design of atan2 and similar functions -->
+
 ## Asymptotic Complexity
 ## Bit Twiddling
 ## Binary Search
