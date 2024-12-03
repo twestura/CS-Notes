@@ -142,7 +142,7 @@ Logarithms were introduced in the early 1600's independently by two mathematicia
 And oh boy, John Napier apparently was quite the character.
 He was accused of being a magician and necromancer, with a black rooster as his summoning familiar.
 
-Anyway, Napier was the one who created the word logarithm, smashing together the Greek words *logos*, roughly meaning ratio, or calculation, and *arithmos* meaning number.
+Anyway, Napier was the one who created the word logarithm, smashing together the Greek words *logos*, roughly meaning ratio or calculation, and *arithmos*, meaning number.
 The logarithm is essentially the "calculation-number" that originally was used to enable mathematicians, astronomers, and other interested folk to speed up the process of performing multiplications and other calculations.
 
 Adding numbers by hand is a process that is linear in the number of digits: just pair them up, add the pairs from right to left, potentially carrying a 1 when necessary.
