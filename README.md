@@ -250,7 +250,7 @@ $$\log_a{x} = \log_b{x} \log_a{b},$$
 and dividing by $\log_a{b}$ gives the desired formula.
 Note this division is always possible since we require ${b \ne 1}$, and hence ${\log_a{b} \ne 0}$.
 
-As a corollary, for postive nonzero real numbers $a$ and $b$, we can plug in $a$ for in in the formula to obtain:
+As a corollary, for postive nonzero real numbers $a$ and $b$, we can plug in $a$ for $x$ in the formula to obtain:
 
 $$\log_b{a} = \frac{1}{\log_a{b}},$$
 
