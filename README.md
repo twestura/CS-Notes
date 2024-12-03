@@ -210,7 +210,71 @@ Writing this out, we can see how the associativity of multiplication plays a rol
 
 $$xy = \overbrace{\underbrace{\left(b\cdots{}b\right)}_{\log_b{x}\text{ times}}\underbrace{\left(b\cdots{}b\right)}_{\log_b{y}\text{ times }}}^{\log_b{x} + \log_b{y}\text{ times}}$$
 
-<!-- TODO more properties -->
+Next is the "power rule," which states we can remove an exponent from inside of a log and place it as a coefficient outside of the log.
+Let $b$, $x$, and $y$ be real numbers, ${b, x > 0}$, and ${b \ne 1}$.
+Then
+
+$$\log_b{x^y} = y \log_b{x}.$$
+
+To show this rule, we use the property that ${{(b^x)}^y = b^{xy}}$:
+
+$$x^y = {\left(b^{\log_b{x}}\right)}^y = b^{y\log_b{x}}.$$
+
+In particular, we can extract roots.
+For a positive integer~$n$, appliying this rule yields
+
+$$\log_b{\sqrt[n]{x}} = \frac{1}{n} \log_b{x}.$$
+
+Combining with the product rule, we obtain the quotient rule for positive numbers $b$, $x$, and $y$ with ${b \ne 1}$:
+
+$$\log_b{\frac{x}{y}} = \log_b{x} - \log_b{y}.$$
+
+To see this, note that ${\frac{x}{y} = xy^{-1}}$ and apply the previous two laws.
+
+$$\log_b{\frac{x}{y}} = \log_b{xy^{-1}} = \log_b{x} + \log_b{y^{-1}} = \log_b{x} - \log_b{y}.$$
+
+And finally we have the change of base formula.
+Let $b$, $x$, and $y$ be positive numbers with ${b \ne 1}$ then for all positive real numbers ${a \ne q}$, we have
+
+$$\log_b{x} = \frac{\log_a{x}}{\log_a{b}}.$$
+
+We prove this formula as follows:
+
+$$x = b^{\log_b{x}} = {(a^{\log_a{b}})}^{\log_b{x}} = a^{\log_b{x} \log_a{b}}.$$
+
+Therefore
+
+$$\log_a{x} = \log_b{x} \log_a{b},$$
+
+and dividing by $\log_a{b}$ gives the desired formula.
+Note this division is always possible since we require ${b \ne 1}$, and hence ${\log_a{b} \ne 0}$.
+
+As a corollary, for postive nonzero real numbers $a$ and $b$, we can plug in $a$ for in in the formula to obtain:
+
+$$\log_b{a} = \frac{1}{\log_a{b}},$$
+
+giving a formula for "swapping" the base and the argument.
+
+And one final property.
+Let $b$, $x$, and $y$ be real numbers, ${b, x > 0}$, ${b \ne 1}$, and ${y \ne 0}$.
+Then
+
+$$\log_{b^y}{x} = \frac{1}{y} \log_b{x}.$$
+
+To prove this property, note
+
+$$x = {(b^y)}^{\log_{b^y}{x}} = b^{y \log_{b^y}{x}}.$$
+
+This equation gives us
+
+$$\log_{b}{x} = y\log_{b^y}{x}.$$
+
+Dividing both sides by $y$, which we can do since we assumed $y$ is nonzero, yields the desired form.
+Of particular use is the case ${y = -1}$:
+
+$$\log_{\frac{1}{b}}{x} = -\log_b{x}.$$
+
+The following table summarizes the important properties of logarithms.
 
 | Log properties | Corollaries |
 | -------------- | ----------- |
