@@ -292,7 +292,70 @@ See the logarithmic functions in [Python's math module](https://docs.python.org/
 
 <!-- TODO don't need lots of trig identities, just the basic design of atan2 and similar functions -->
 
+## Anonymous/Lambda functions
+
+A bit of notation, the lowercase Greek letter lambda, written $\lambda$, often is used to write anonymous functions.
+What makes a function anonymous?
+Well, starting in high school mathematics, we usually see functions given a single letter name, such as $f$, $g$, or $h$.
+We might define a function using a formula such as ${f(x) = x^2}$.
+But there is an underlying concept of a mapping from an input $x$ to an output $x^2$ that is independent of the name we give the function.
+We don't necessarily have to call it $f$.
+And it's useful to have a notation for refering to a function without needing to name it, hence the phrase anonymous.
+
+Often we use simple numbers or value directly instead of sorting them in variables.
+For example, instead of writing "let ${x = 5}$ and evaluate $f(x)$," we directly can write "$f(5)$."
+In some cases we may want to use a function directly without naming it.
+Passing a comparison function to a sorting algorithm is a good example, such as in the following Javascript code to sort an array in ascenting order.
+We could define and name a function to use as the comparator, or we could just pass an anonymous function directly.
+
+```js
+/**
+ * Returns a positive number if `x > y`, a negative number if `x < y`,
+ * and `0` if `x === y`.
+ */
+function compare(x, y) {
+    return x - y;
+}
+console.log([5, 7, 3, 2, 9].sort(compare));
+
+// Using an anonymous function.
+console.log([5, 7, 3, 2, 9].sort((x, y) => x - y));
+```
+
+We might us an arrow notation to refer to the underlying mapping of a function without explicitly naming it.
+For example, the squaring function could be written as ${x \mapsto x^2}$, using the `\mapsto` $\LaTeX$ macro.
+
+So where does the $\lambda$ come in?
+The story as I've heard it goes that back around the 1930's, Alonso Church had started using a hat on top of variables to indicate which variable was the input, followed by a period, and then the "body" of the function.
+For example, ${x \mapsto x^2}$ would be writted as ${\hat{x} . x \cdot x}$.
+However, at the time it was difficult to typeset the hat on top of the $x$, and eventually the notation morphed into using the character $\lambda$ in front of the input variable, yielding ${\lambda x . x \cdot x}$.
+
+In Java, the notation for a lambda or anonymous function is to place the parameters in parenthese, followed by an arrow, and then the function body.
+Simple one-line function bodies that immediately return do not need curly braces or the return keyword.
+
+In Python, the notation is (in my opinion) fairly cumbersome.
+We literally type in the word `lambda`.
+
+<!-- TODO code examples in Java and Python, maybe mention Haskell's notation too -->
+
 ## Asymptotic Complexity
+
+Big Oh notation is used to classify the running time of algorithms.
+It classifies the mathematical form of the algorithm without necessarily referencing a particular implementation or hardware instance where the algorithm is executed.
+It also is used to describe space complexity, which measure how much memory an algorithm needs during its execution.
+
+For the purposes of "job interview questions," most usages of Big Oh notation are fairly straightforward.
+The basic tasks are knowing how to pick out the number of loop iterations over basic data structures to count the number of operations it take an algorithm to execute over its worst-case input.
+Let's discuss the basic definition of Big Oh notation, then delve more into details about hot its used.
+
+### Definition
+
+Let ${f, g : \mathbb{R}^{\ge} \to \mathbb{R}^+}$ be positive-value functions defined on the nonnegative reals.
+We'll later discuss a more general definition, but for purposes of algorithm analysis, we don't need to consider negative numbers, as glorious as such a running time would be.
+
+We say that $g$ is an asymptotic upper bound of $f$, written $f$ is $O(g)$ or abusively as ${f = O(g)}$, if there exist positive numbers $N$ and $k$ such that for all ${n > N}$, it holds that ${f(n) \le kg(n)}$.
+
+
 ## Bit Twiddling
 ## Binary Search
 ## Sorting Algorithms
