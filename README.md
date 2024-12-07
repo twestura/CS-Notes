@@ -326,7 +326,7 @@ We might us an arrow notation to refer to the underlying mapping of a function w
 For example, the squaring function could be written as ${x \mapsto x^2}$, using the `\mapsto` $\LaTeX$ macro.
 
 So where does the $\lambda$ come in?
-The story as I've heard it goes that back around the 1930's, Alonso Church had started using a hat on top of variables to indicate which variable was the input, followed by a period, and then the "body" of the function.
+The story as I've heard it goes back to the 1930's, when Alonso Church had started using a hat on top of variables to indicate which variable was the input, followed by a period, and then the "body" of the function.
 For example, ${x \mapsto x^2}$ would be writted as ${\hat{x} . x \cdot x}$.
 However, at the time it was difficult to typeset the hat on top of the $x$, and eventually the notation morphed into using the character $\lambda$ in front of the input variable, yielding ${\lambda x . x \cdot x}$.
 
