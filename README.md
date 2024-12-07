@@ -302,7 +302,7 @@ But there is an underlying concept of a mapping from an input $x$ to an output $
 We don't necessarily have to call it $f$.
 And it's useful to have a notation for refering to a function without needing to name it, hence the phrase anonymous.
 
-Often we use simple numbers or value directly instead of sorting them in variables.
+Often we use simple numbers or values directly instead of sorting them in variables.
 For example, instead of writing "let ${x = 5}$ and evaluate $f(x)$," we directly can write "$f(5)$."
 In some cases we may want to use a function directly without naming it.
 Passing a comparison function to a sorting algorithm is a good example, such as in the following Javascript code to sort an array in ascenting order.
