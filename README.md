@@ -344,17 +344,27 @@ Big Oh notation is used to classify the running time of algorithms.
 It classifies the mathematical form of the algorithm without necessarily referencing a particular implementation or hardware instance where the algorithm is executed.
 It also is used to describe space complexity, which measure how much memory an algorithm needs during its execution.
 
+<!-- TODO etymology of asymptote -->
+
 For the purposes of "job interview questions," most usages of Big Oh notation are fairly straightforward.
 The basic tasks are knowing how to pick out the number of loop iterations over basic data structures to count the number of operations it take an algorithm to execute over its worst-case input.
 Let's discuss the basic definition of Big Oh notation, then delve more into details about hot its used.
 
-### Definition
+### Big Oh Definition
 
 Let ${f, g : \mathbb{R}^{\ge} \to \mathbb{R}^+}$ be positive-value functions defined on the nonnegative reals.
 We'll later discuss a more general definition, but for purposes of algorithm analysis, we don't need to consider negative numbers, as glorious as such a running time would be.
 
 We say that $g$ is an asymptotic upper bound of $f$, written $f$ is $O(g)$ or abusively as ${f = O(g)}$, if there exist positive numbers $N$ and $k$ such that for all ${n > N}$, it holds that ${f(n) \le kg(n)}$.
+Taking $n > N$ means that we only are concerned with the bound for large inputs.
+It allows us to discard cases where $f$ is "less efficient" than $g$ for small input sizes.
+Introducing the constant $k$ essentially allows us to discard constants and thereby group together functions whose graphs have similar "shapes."
 
+Often we use an expression involving $n$ inside of the Big Oh notation, rather than a function.
+For example, when we write $f$ is $O(n^2)$, we really mean that $f$ is $O(n \mapsto n^2)$.
+It's also common to include the $n$ outside of the notation too and write $f(n)$ is $O(n^2)$, even though $f(n)$ usually denotes the value of $f$ at $n$, rather than the function $f$ itself.
+
+<!-- TODO O(1) notation -->
 
 ## Bit Twiddling
 ## Binary Search
