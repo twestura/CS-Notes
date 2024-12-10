@@ -160,8 +160,7 @@ For example:
 
 $$2^4 = \underbrace{2 \cdot 2 \cdot 2 \cdot 2}_{4 \text{ times}} = 16; \qquad \log_2{16} = 4.$$
 
-But this equation can be interpreted another way.
-We can view the logarithm as giving the number of times we can divide $16$ by $2$ to get all the way down to $1$.
+But this equation can be interpreted another way---we can view the logarithm as giving the number of times we can divide $16$ by $2$ to get all the way down to $1$:
 
 $$
     \begin{align*}
@@ -173,7 +172,7 @@ $$
 $$
 
 This interpretation is analogous to our description of division as the number of subtractions performed in order to reach $0$.
-And the count of the number of divisions to reach $1$ is how we commonly use algorithms in analyzing the running time of divide and conquer algorithms: we divide the problem into subproblems, and the logarithm gives the "height" of the stack of subproblems.
+And the count of the number of divisions to reach $1$ is how we commonly use logarithms in analyzing the running time of divide and conquer algorithms: we divide the problem into subproblems, and the logarithm gives the "height" of the stack of subproblems.
 
 There are two important properties of logarithms:
 
@@ -287,6 +286,8 @@ The following table summarizes the important properties of logarithms.
 | $$\log_b{x} = \frac{\log_a{x}}{\log_a{b}}$$ | $$\log_b{a} = \frac{1}{\log_a{b}}$$ |
 
 See the logarithmic functions in [Python's math module](https://docs.python.org/3/library/math.html#math.log) and in [Java's Math class](https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/Math.html#log(double)).
+
+<!-- TODO notes on numerical stability of turning products of small numbers into sums -->
 
 ### Trigonometry
 
