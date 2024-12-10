@@ -293,6 +293,8 @@ See the logarithmic functions in [Python's math module](https://docs.python.org/
 
 <!-- TODO don't need lots of trig identities, just the basic design of atan2 and similar functions -->
 
+<!-- TODO reference the atan2 problem. -->
+
 ## Anonymous/Lambda functions
 
 A bit of notation, the lowercase Greek letter lambda, written $\lambda$, often is used to write anonymous functions.
@@ -323,7 +325,7 @@ console.log([5, 7, 3, 2, 9].sort(compare));
 console.log([5, 7, 3, 2, 9].sort((x, y) => x - y));
 ```
 
-We might us an arrow notation to refer to the underlying mapping of a function without explicitly naming it.
+We often use an arrow notation to refer to the underlying mapping of a function without explicitly naming it.
 For example, the squaring function could be written as ${x \mapsto x^2}$, using the `\mapsto` $\LaTeX$ macro.
 
 So where does the $\lambda$ come in?
@@ -331,7 +333,7 @@ The story as I've heard it goes back to the 1930's, when Alonso Church had start
 For example, ${x \mapsto x^2}$ would be writted as ${\hat{x} . x \cdot x}$.
 However, at the time it was difficult to typeset the hat on top of the $x$, and eventually the notation morphed into using the character $\lambda$ in front of the input variable, yielding ${\lambda x . x \cdot x}$.
 
-In Java, the notation for a lambda or anonymous function is to place the parameters in parenthese, followed by an arrow, and then the function body.
+In Java, the notation for a lambda or anonymous function is to place the parameters in parentheses, followed by an arrow, and then the function body.
 Simple one-line function bodies that immediately return do not need curly braces or the return keyword.
 
 In Python, the notation is (in my opinion) fairly cumbersome.
