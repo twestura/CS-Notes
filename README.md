@@ -160,7 +160,7 @@ For example:
 
 $$2^4 = \underbrace{2 \cdot 2 \cdot 2 \cdot 2}_{4 \text{ times}} = 16; \qquad \log_2{16} = 4.$$
 
-But this equation can be interprete another way.
+But this equation can be interpreted another way.
 We can view the logarithm as giving the number of times we can divide $16$ by $2$ to get all the way down to $1$.
 
 $$
