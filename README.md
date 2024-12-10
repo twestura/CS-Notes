@@ -348,7 +348,7 @@ It also is used to describe space complexity, which measure how much memory an a
 
 For the purposes of "job interview questions," most usages of Big Oh notation are fairly straightforward.
 The basic tasks are knowing how to pick out the number of loop iterations over basic data structures to count the number of operations it take an algorithm to execute over its worst-case input.
-Let's discuss the basic definition of Big Oh notation, then delve more into details about hot its used.
+Let's discuss the basic definition of Big Oh notation, then delve more into details about how it's used.
 
 ### Big Oh Definition
 
