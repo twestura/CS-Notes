@@ -2,7 +2,7 @@
 
 import math
 
-from atan import max_points
+from atan import max_points, max_points_binary
 
 HALF_PI = math.pi / 2.0
 
@@ -46,7 +46,7 @@ def test_mixture() -> None:
 
 
 def test_tight_mixture() -> None:
-    """Tests the arc selects the correct cluster of points with a small angle."""
+    """Tests the arc selects the cluster of points within a small angle."""
     assert 4 == max_points(
         [
             (1, 1.1),

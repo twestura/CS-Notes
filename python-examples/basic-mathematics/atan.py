@@ -1,6 +1,7 @@
 """An example interview question."""
 
 
+import bisect
 import math
 
 
@@ -76,5 +77,31 @@ def max_points_binary(
 
     This function is an alternative implementation that uses a binary
     search in the loop instead of a two-pointer approach.
+
+    The overall running time is still O(n log n), but in the other
+    algorithm only the sorting step is O(n log n), while the main loop
+    is O(n). Here the main loop also is O(n log n) because of the
+    O(log n) binary search on every iteration.
     """
-    raise Exception()
+    # The number of points at the camera's position.
+    num_origin = sum(x0 == x and y0 == y for x, y in points)
+    # Non-origin points converted to the angle they make with the x-axis, with the
+    # angle value in the range `[0, math.tau)`.
+    angles = sorted(
+        math.atan2(y - y0, x - x0) % math.tau for x, y in points if x != x0 or y != y0
+    )
+    n = len(angles)  # The number of non-origin points included in `angles`.
+
+    def get_angle(i: int) -> float:
+        return math.tau + angles[i % n] if i >= n else angles[i]
+
+    num_repeats, angle = divmod(abs(angle), math.tau)
+    num_repeats = int(num_repeats)  # The quotient of the `divmod` is an integer.
+    max_points = 0
+    # TODO loop invariant, test
+    for left, theta in enumerate(angles):
+        right = bisect.bisect_right(angles, angle + theta, lo=left + 1)
+        max_points = max(max_points, right - left)
+        if max_points == n:
+            break
+    return max_points + num_origin + num_repeats * (n + num_origin)
